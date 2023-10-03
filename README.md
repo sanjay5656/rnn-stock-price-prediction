@@ -1,16 +1,20 @@
 # Stock Price Prediction
 
-## AIM
+## AIM :
 
 To develop a Recurrent Neural Network model for stock price prediction.
 
-## Problem Statement and Dataset
+## Problem Statement and Dataset :
+The given problem is to predict the google stock price based on time.
+For this we are provided with a dataset which contains features like
+Date, Opening Price, Highest Price, Lowest Price, Closing Price, Adjusted Closing Price, Volume
+Based on the given features, develop a RNN model to predict, the price of stocks in future
 
-## Neural Network Model
+## Neural Network Model :
 
-Include the neural network model diagram.
+![image](https://github.com/sanjay5656/rnn-stock-price-prediction/assets/115128955/6edfdefc-3fbd-434d-9ce4-ee900a04bcb3)
 
-## DESIGN STEPS
+## DESIGN STEPS :
 
 ### STEP 1: 
 Import the necessary tensorflow modules
@@ -22,10 +26,9 @@ Load the stock dataset
 Fit the model and then predict
 
 ## PROGRAM
-```
 Developed By : Sanjay S
 Register No  : 212221243002
-```
+
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -90,15 +93,15 @@ from sklearn.metrics import mean_squared_error as mse
 mse(y_test,predicted_stock_price)
 ```
 
-## OUTPUT
+## OUTPUT :
 
-### True Stock Price, Predicted Stock Price vs time
+### True Stock Price, Predicted Stock Price vs time :
 
 ![image](https://github.com/sanjay5656/rnn-stock-price-prediction/assets/115128955/7c974d6e-6ea9-462b-a4e0-80f10e82b6ba)
 
-### Mean Square Error
+### Mean Square Error :
 
 ![image](https://github.com/sanjay5656/rnn-stock-price-prediction/assets/115128955/dc6012cc-73b4-4021-9fde-6926b630964d)
 
-## RESULT
+## RESULT :
 Thus, a Recurrent Neural Network model for stock price prediction is developed.
