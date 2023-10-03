@@ -26,8 +26,6 @@ Fit the model and then predict
 Developed By : Sanjay S
 Register No  : 212221243002
 ```
-
-##Libraries
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -35,9 +33,7 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from keras import layers
 from keras.models import Sequential
-```
-Read Train Data & Normalize:
-```
+
 dataset_train = pd.read_csv('trainset.csv')
 dataset_train.columns
 dataset_train.head()
@@ -57,16 +53,12 @@ X_train1 = X_train.reshape((X_train.shape[0], X_train.shape[1],1))
 X_train.shape
 length = 60
 n_features = 1
-```
-##Build & Train Model:
-```
+
 model = Sequential([layers.SimpleRNN(50,input_shape=(60,1)),layers.Dense(1)])
 model.compile(optimizer='adam',loss='mse')
 model.summary()
 model.fit(X_train1,y_train,epochs=20, batch_size=32)
-```
-##Read Test Data & Normalize
-```
+
 dataset_test = pd.read_csv('testset.csv')
 test_set = dataset_test.iloc[:,1:2].values
 test_set.shape
@@ -82,9 +74,7 @@ for i in range(60,1384):
 X_test = np.array(X_test)
 X_test = np.reshape(X_test,(X_test.shape[0], X_test.shape[1],1))
 X_test.shape
-```
-##Predict Values & Plot
-```
+
 predicted_stock_price_scaled = model.predict(X_test)
 predicted_stock_price = sc.inverse_transform(predicted_stock_price_scaled)
 plt.plot(np.arange(0,1384),inputs, color='red', label = 'Test(Real) Google stock price')
@@ -95,9 +85,7 @@ plt.xlabel('Time')
 plt.ylabel('Google Stock Price')
 plt.legend()
 plt.show()
-```
-##MSE Score
-```
+
 from sklearn.metrics import mean_squared_error as mse
 mse(y_test,predicted_stock_price)
 ```
