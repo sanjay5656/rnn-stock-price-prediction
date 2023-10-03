@@ -36,7 +36,7 @@ from sklearn.preprocessing import MinMaxScaler
 from keras import layers
 from keras.models import Sequential
 ```
-##Read Train Data & Normalize:
+Read Train Data & Normalize:
 ```
 dataset_train = pd.read_csv('trainset.csv')
 dataset_train.columns
